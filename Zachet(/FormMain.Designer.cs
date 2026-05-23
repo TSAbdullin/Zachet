@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvNotes = new DataGridView();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -41,6 +41,7 @@
             buttonEdit = new Button();
             buttonDeleteOne = new Button();
             buttonDeleteDone = new Button();
+            buttonRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvNotes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)reminderBindingSource).BeginInit();
             SuspendLayout();
@@ -49,29 +50,30 @@
             // 
             dgvNotes.AutoGenerateColumns = false;
             dgvNotes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvNotes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNotes.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, dateDataGridViewTextBoxColumn, priorityDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn });
             dgvNotes.DataSource = reminderBindingSource;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvNotes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvNotes.DefaultCellStyle = dataGridViewCellStyle6;
             dgvNotes.Dock = DockStyle.Bottom;
             dgvNotes.Location = new Point(0, 202);
             dgvNotes.Name = "dgvNotes";
             dgvNotes.ReadOnly = true;
+            dgvNotes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvNotes.Size = new Size(800, 248);
             dgvNotes.TabIndex = 0;
             // 
@@ -134,6 +136,7 @@
             buttonDeleteOne.TabIndex = 3;
             buttonDeleteOne.Text = "Удалить";
             buttonDeleteOne.UseVisualStyleBackColor = true;
+            buttonDeleteOne.Click += buttonDeleteOne_Click;
             // 
             // buttonDeleteDone
             // 
@@ -143,12 +146,24 @@
             buttonDeleteDone.TabIndex = 4;
             buttonDeleteDone.Text = "Удалить все выполненные";
             buttonDeleteDone.UseVisualStyleBackColor = true;
+            buttonDeleteDone.Click += buttonDeleteDone_Click;
+            // 
+            // buttonRefresh
+            // 
+            buttonRefresh.Location = new Point(621, 12);
+            buttonRefresh.Name = "buttonRefresh";
+            buttonRefresh.Size = new Size(174, 34);
+            buttonRefresh.TabIndex = 5;
+            buttonRefresh.Text = "Обновить";
+            buttonRefresh.UseVisualStyleBackColor = true;
+            buttonRefresh.Click += buttonRefresh_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonRefresh);
             Controls.Add(buttonDeleteDone);
             Controls.Add(buttonDeleteOne);
             Controls.Add(buttonEdit);
@@ -172,5 +187,6 @@
         private Button buttonEdit;
         private Button buttonDeleteOne;
         private Button buttonDeleteDone;
+        private Button buttonRefresh;
     }
 }

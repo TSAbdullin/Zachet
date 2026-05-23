@@ -81,8 +81,10 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Font = new Font("Segoe UI", 13F);
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Высокий", "Средний", "Низкий" });
             comboBox1.Location = new Point(249, 215);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(368, 31);

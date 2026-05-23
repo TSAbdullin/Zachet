@@ -19,6 +19,12 @@ namespace Zachet_
                 return;
             }
 
+            if (dateTimePicker1.Value <  DateTime.Now)
+            {
+                MessageBox.Show("Заполните корректно дату");
+                return;
+            }
+
             if (!Enum.TryParse(comboBox1.Text, out Priority date))
             {
                 return;

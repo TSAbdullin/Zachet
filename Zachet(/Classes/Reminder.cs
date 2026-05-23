@@ -5,6 +5,7 @@ namespace Zachet_.Classes
 {
     public class Reminder
     {
+        public Guid Id {  get; set; }
         public string? Name { get; set; }
         public DateTime Date { get; set; }
         public Priority Priority { get; set; }
